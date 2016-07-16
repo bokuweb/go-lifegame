@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -62,16 +63,16 @@ func (p *game) updateCell(r, c int) bool {
 }
 
 func (p *game) render() {
-	print("\033[0;0H")
+	fmt.Print("\033[0;0H")
 	for r := 0; r < p.row; r++ {
 		for c := 0; c < p.column; c++ {
 			cell := " "
 			if p.field[r][c] {
 				cell = "█"
 			}
-			print(cell)
+			fmt.Print(cell)
 		}
-		println()
+		fmt.Println()
 	}
 }
 
